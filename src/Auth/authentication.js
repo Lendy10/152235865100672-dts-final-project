@@ -24,7 +24,7 @@ const auth = getAuth(app)
 const register = async (email, password) => {
     // Dokumentasi: https://firebase.google.com/docs/auth/web/password-auth
     try {
-        const response = await createUserWithEmailAndPassword(
+        await createUserWithEmailAndPassword(
             auth,
             email,
             password
@@ -38,7 +38,7 @@ const register = async (email, password) => {
 const login = async (email, password) => {
     // Dokumentasi: https://firebase.google.com/docs/auth/web/password-auth#sign_in_a_user_with_an_email_address_and_password
     try {
-        const userCredential = await signInWithEmailAndPassword(
+        await signInWithEmailAndPassword(
             auth,
             email,
             password

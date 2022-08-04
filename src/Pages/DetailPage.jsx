@@ -7,7 +7,7 @@ import { Content } from '../Container/Content'
 
 export const DetailPage = () => {
     const [news, setNews] = useState([])
-    const [searchParam, setSearchParam] = useSearchParams();
+    const [searchParam] = useSearchParams();
 
     useEffect(() => {
         const newsID = searchParam.get('id');
@@ -20,7 +20,7 @@ export const DetailPage = () => {
             }
         }
         getNewsDetail()
-    }, [])
+    }, [searchParam])
 
     return (
         <div className='container h-screen'>
